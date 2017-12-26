@@ -30,29 +30,140 @@ defmodule Gringotts.Gateways.StripeTest do
   @optional_opts [address: @address]
 
   describe "authorize/3" do
-    test "should authorize wth card and required opts attrs" do
-      amount = 5
-      response = Stripe.authorize(amount, @card, @required_opts ++ @optional_opts)
-
-      assert Map.has_key?(response, "id")
-      assert response["amount"] == 500
-      assert response["captured"] == false
-      assert response["currency"] == "usd"
+    test "wth card details and options" do
     end
 
-    test "should not authorize if card is not passed" do
-      amount = 5
-      response = Stripe.authorize(amount, %{}, @required_opts ++ @optional_opts)
-
-      assert Map.has_key?(response, "error")
+    test "with empty card details and options" do
     end
 
-    # test "should not authorize if required opts not present" do
-    #   amount = 5
-    #   response = Stripe.authorize(amount, @card, @optional_opts)
+    test "with expiration year missing from card details" do
+    end
 
-    #   assert Map.has_key?(response, "error")
-    # end
+    test "with expiration month missing from card details" do
+    end
 
+    test "with card number missing from card details" do
+    end
+
+    test "with cvc missing from card details" do
+    end
+
+    test "with valid card token" do
+    end
+
+    test "with invalid card token" do
+    end
   end
+
+  describe "purchase/3" do
+    test "wth card details and options" do
+    end
+
+    test "with empty card details and options" do
+    end
+
+    test "with expiration year missing from card details" do
+    end
+
+    test "with expiration month missing from card details" do
+    end
+
+    test "with card number missing from card details" do
+    end
+
+    test "with cvc missing from card details" do
+    end
+
+    test "with valid card token" do
+    end
+
+    test "with invalid card token" do
+    end
+  end
+
+  describe "capture/3" do
+    test "with valid charge id" do
+    end
+
+    test "with invalid charge id" do
+    end
+
+    test "with already captured charge id" do
+    end
+
+    test "with amount less than captured amount" do
+    end
+
+    test "with amount equals to the captured amount" do
+    end
+
+    test "with amount greater than the captured amount" do
+    end
+  end
+
+  describe "void/2" do
+    test "with valid charge id" do
+    end
+
+    test "with invalid charge id" do
+    end
+
+    test "with already voided charge id" do
+    end
+  end
+
+  describe "refund/3" do
+    test "with valid charge id" do
+    end
+
+    test "with invalid charge id" do
+    end
+
+    test "with already refunded charge id" do
+    end
+
+    test "with refunded amount less than captured amount" do
+    end
+
+    test "with refunded amount equals to the captured amount" do
+    end
+
+    test "with refunded amount greater than the captured amount" do
+    end
+  end
+
+  describe "store/2" do
+    test "wth card details and options" do
+    end
+
+    test "with empty card details and options" do
+    end
+
+    test "with expiration year missing from card details" do
+    end
+
+    test "with expiration month missing from card details" do
+    end
+
+    test "with card number missing from card details" do
+    end
+
+    test "with cvc missing from card details" do
+    end
+
+    test "with valid card token" do
+    end
+
+    test "with invalid card token" do
+    end
+  end
+
+  describe "unstore/2" do
+    test "with valid customer id" do
+    end
+
+    test "with invalid customer id" do
+    end
+  end
+
 end
